@@ -42,7 +42,8 @@
         <div class="alphabet-container">
             <div ng-controller="AlphabetSummaryController">
                 <div class="alphabet-list">
-                    <button ng-repeat="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')"
+                    <p>Son mas de 150 pokemons. Cuantos puedes tu nombrar</p>
+                    <button  class="alphabet-btn" ng-repeat="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')"
                     ng-click="filterByLetter(letter)">
                 {{ letter }} ({{ alphabetCount[letter] || 0 }})
             </button>

@@ -117,6 +117,7 @@ body {
   align-items: center;
   width: 150px;
   grid-area: poke-name;
+  margin:1%;
 }
 .poke-name:hover {
 background-color: #f49545;
@@ -178,9 +179,17 @@ cursor: pointer;
   height: 30px;
   border-color: #4379cf;
 }
+.alphabet-btn,
 .pag-btn:hover{
 cursor:pointer;
 }
+.alphabet-btn{
+  background: linear-gradient(to right,#6188ff,#6188ff 70%,#71a4f3 71%,#71a4f3 97%,#8ec0f0 100%);
+  border-radius: 5px;
+  color: white;
+  width: 5%;
+}
+
 @media only screen and (max-width: 768px) {
   .container {
 
