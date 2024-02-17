@@ -9,12 +9,12 @@ angular.module('pokeApp').controller('AlphabetSummaryController', ['$scope', '$r
           let firstLetter = pokemon.name.charAt(0).toUpperCase();
           $scope.alphabetCount[firstLetter] = ($scope.alphabetCount[firstLetter] || 0) + 1;
       });
-      $rootScope.$apply(); // Usar $rootScope.$apply() para asegurar la actualización de la vista en todo el ámbito de la aplicación.
+      $rootScope.$apply(); 
   };
 
   $scope.filterByLetter = function(letter) {
       $scope.filteredPokemons = $scope.allPokemons.filter(pokemon => pokemon.name.startsWith(letter));
-      $rootScope.$apply(); // Esto asegurará que los cambios se reflejen en la vista.
+      $rootScope.$apply(); 
   };
 
   $scope.loadSummary();
