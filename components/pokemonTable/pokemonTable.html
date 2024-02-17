@@ -1,8 +1,7 @@
 <div ng-controller="PokemonTableController" class="container">
     <!-- Filtro de Búsqueda -->
     <div class="header" id="header">
-        <input type="text" ng-model="searchText" placeholder="Buscar Pokémon..." ng-change="updateSuggestions()"
-            autocomplete="false">
+        <input type="text" id="inputPoke" ng-model="searchText" placeholder="Buscar Pokémon..." ng-change="updateSuggestions()">
         <ul class="suggestions-list">
             <li ng-repeat="suggestion in suggestions" ng-click="selectPokemon(suggestion)">
                 {{ suggestion.name }}
