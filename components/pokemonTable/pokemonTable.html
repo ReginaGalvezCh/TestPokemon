@@ -1,0 +1,60 @@
+<div ng-controller="PokemonTableController" class="container">
+    <!-- Filtro de Búsqueda -->
+    <div class="header" id="header">
+        <input type="text" ng-model="searchText" placeholder="Buscar Pokémon..." ng-change="updateSuggestions()"
+            autocomplete="false">
+        <ul class="suggestions-list">
+            <li ng-repeat="suggestion in suggestions" ng-click="selectPokemon(suggestion)">
+                {{ suggestion.name }}
+            </li>
+        </ul>
+    </div>
+    <!-- Lista de Pokémon -->
+    <div class="container-name" id="container-name">
+        <div class="poke-name" ng-repeat="pokemon in pokemons | filter:searchText | limitTo: pageSize"
+            ng-click="selectPokemon(pokemon)">
+            <h3>{{pokemon.name}}</h3>
+        </div>
+    </div>
+
+
+    <!-- Detalles del Pokémon -->
+    <div class="container-image" id="container-image">
+        <div ng-if="selectedPokemon">
+            <div class="container-poke">
+                <img ng-src="{{selectedPokemon.image}}" alt="{{selectedPokemon.name}}">
+
+            </div>
+            <div class="detail-container">
+                <p class="type">Tipos: <span ng-repeat="type in selectedPokemon.types">{{ type }}{{$last ? '' : ', '}}</span></p>
+                <p class="habilities">Habilidades: <span ng-repeat="ability in selectedPokemon.abilities">{{ ability }}{{$last ? '' : ',
+                        '}}</span></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer"  id="footer">
+        <div class="pagination-controls">
+            <button class="pag-btn" ng-click="prevPage()"><</button>
+            <span>Página {{currentPage + 1}} de {{totalPages}}</span>
+            <button class="pag-btn"  ng-click="nextPage()">></button>
+        </div>
+        <div class="alphabet-container">
+            <div ng-controller="AlphabetSummaryController">
+                <div class="alphabet-list">
+                    <button ng-repeat="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')"
+                        ng-click="filterByLetter(letter)">
+                        {{ letter }}
+                    </button>
+                </div>
+                <div ng-if="filteredPokemons.length > 0">
+                    <ul>
+                        <li ng-repeat="pokemon in filteredPokemons">{{ pokemon.name }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</div>

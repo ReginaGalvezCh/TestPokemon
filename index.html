@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="pokeApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon App</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="components/AlphabetSummary/AlphabetSummaryController.js"></script>
+    <script src="components/pokemonTable/PokemonTableController.js"></script>
+    <script src="services/pokemonService.js"></script>
+
+</body>
+
+</html>

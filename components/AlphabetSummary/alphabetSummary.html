@@ -1,0 +1,12 @@
+<div ng-controller="AlphabetSummaryController">
+  <div class="alphabet-list">
+    <button ng-repeat="letter in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')" ng-click="filterByLetter(letter)">
+      {{ letter }}
+    </button>
+  </div>
+  <div ng-if="filteredPokemons.length > 0">
+    <ul>
+      <li ng-repeat="pokemon in filteredPokemons">{{ pokemon.name }}</li>
+    </ul>
+  </div>
+</div>
